@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block nav %}
+{% endblock %}
+
+{% block contenido %}
+<center>
+    <h1 class="text-center">Iniciar Sesion</h1>
+    <br>
+<form method='POST'>
+    {% csrf_token%}
+    {{form.as_p}}
+    <div class="form-group">
+        <a href="#">Ovide mi Contraseña</a>
+        <input type="submit" name="Guardar" value="Iniciar" class="btn success">
+    </div>
+    
+</form>
+
+             <a class="nav-link" href="{% url 'logout' %}"><button class="btn btn-danger">Cancelar</button></a>
+
+</center>
+
+ 
+{% endblock %}
+
+{% block prueba1 %}
+      
+          {% endblock %}

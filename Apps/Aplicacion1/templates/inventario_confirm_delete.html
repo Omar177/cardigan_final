@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block nav %}
+
+{% endblock %}
+
+{% block contenido %}
+<br>
+<br>
+<center>
+        	<form method='POST' >
+
+			{% csrf_token%}
+	
+
+			<p> <strong>¿desea eliminar el registro{{ object }} ?</strong></p>
+			<button type="submit" class="btn btn-danger">confirmar</button>
+
+
+			
+		</form>
+		<a class="nav-link" href="{% url 'logout' %}"><button class="btn btn-danger">Cancelar</button></a>
+		</center>
+	
+
+{% endblock %}
+
+{% block prueba1 %}
+
+{% endblock %}

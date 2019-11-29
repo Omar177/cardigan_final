@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<h3 align="center">Nueva Venta</h3>
+<div class="container">
+		<div class="form-group">
+			<a href="{% url 'app1:venta' %}"><button type="button" class="btn btn-danger btn-lg btn-block"> Asignar Vendedor a la  venta</button></a>
+		</div>
+			
+	</div>
+<mark>
+<table width="450"  align=center>
+    <tr>
+        <td>
+			<form method='POST'>
+					
+
+				{% csrf_token%}
+				{{form.as_p}}
+					
+
+				<div id="precioR"></div>
+			
+				<div class="col_md_8 col-md-offset-2" align="right">
+					<div class="form-group">
+						<button class= "btn btn-primary" type="submit">Enviar</button>
+					</div>
+							
+				</div>
+				
+			</form>
+			<br>
+			
+			<div class="container">
+		<div class="form-group">
+			<a href="{% url 'app1:listadodetallefactura' %}"><button type="button" class="btn btn-success btn-lg btn-block">Ver Todas Las Facturas</button></a>
+		</div>
+			
+	</div>
+	
+
+</table>
+</mark>
+{% endblock %}

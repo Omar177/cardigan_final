@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<br><br>
+<table class="table table-hover table-dark">
+  <h3 class="btn-primary" align="center">Facturas Realizadas</h3>
+  <thead>
+  	<tr>
+		<th >codigo de factura</th>
+		<th scope="col">Vendedor</th>
+		<th scope="col">codigo de producto</th>
+		<th scope="col">cantidad de producto</th>
+		<th scope="col">precio unitario</th>
+		<th scope="col">precio total</th>
+		<th scope="col">fecha factura</th>
+
+		
+	</tr>
+		</thead>
+  <tbody>
+	{% for  est in object_list %}
+	<tr>
+		<td > {{ est.codigo_detalle}}</td>
+		<td > {{ est.codigo_venta}}</td>
+		<td > {{ est.codigo_inventario}}</td>
+		<td > {{ est.cantidad_producto}}</td>
+		<td > {{ est.Precio_unitario}}</td>
+		<td > {{ est.precio_total}}</td>
+		<td > {{ est.fecha_detalle}}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+
+{% endblock %}

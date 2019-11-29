@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<h2>listado de empleados</h2>
+<div class="container">
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Codigo Empleado</th>
+      <th scope="col">Nombre empleado</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+
+	{% for  est in object_list %}
+	<tr>
+		<td > {{ est.codigo_empleado}}</td>
+		<td > {{ est.nombre_empleado}}</td>
+		<td > {{ est.email_empleado}}</td>
+		<td > {{ est.fecha_empleado}}</td>
+			<td>
+			<a  href="{% url 'app1:editar_empleado' est.codigo_empleado %}"><button class="btn btn-light">Editar</button> </a>
+			<a href="{% url 'app1:eliminar_empleado' est.codigo_empleado %}"><button class="btn btn-danger"> Eliminar</button></a>
+			
+		</td>
+
+
+	</tr>
+	
+	
+	{% endfor %}
+	<tr>
+	<div class="container">
+		<div class="form-group">
+			<a href="{% url 'app1:empleado' %}"><button type="button" class="btn btn-success btn-lg btn-block">Crear Nuevo Empleado</button></a>
+		</div>
+			
+	</div>
+	</tr>
+</tbody>
+</table>
+<center>
+             <a class="nav-link" href="{% url 'logout' %}"><button class="btn btn-warning">Salir</button></a>
+ </center>
+ </div>
+{% endblock %}
